@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.container{
+    width: 70rem;
+    height: 60rem;
+    display: flex;
+    align-items: center;
+}
+.book{
+   width: 50%;
+   height: 50%;
+}
+.login{
+    width: 40%;
+    height: 50%;
+    margin-left: 2rem;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+}
+.title{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.h2{
+    display: block;
+    margin-top: 5.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.loginbtn{
+    width: 90%;
+    height: 4rem;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid rgb(87, 87, 87);
+    font-size: 2rem;
+    transition: all 0.3s ease-in;
+}
+.loginbtn:hover{
+    background-color: black;
+    color: white;
+}

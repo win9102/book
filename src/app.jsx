@@ -1,32 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import './app.css';
-
+import Login from './components/login/login'
+import styles from './app.module.css';
+import {BrowserRouter, Route, Switch}  from 'react-router-dom';
+import Bookpage from './components/bookpage/bookpage';
 
 function App({bookData}) {
 
-  const [books, setBooks] = useState([]);
-
-  useEffect(()=>{
-
-   bookData
-   .searchBook()
-   .then(data => setBooks(data.documents));
-
-  },[])
+  
 
   return (
-    <div>
-      <h1>hi</h1>
-      <ul>
-        {
-          books.map((data)=>(
+    <div className={styles.app}>
+      <BrowserRouter>
+      <Switch>
+      <Route exact path="/">
+      <Login/>
+      </Route>
+      <Route path="/bookpage">
+      <Bookpage/>
+      </Route>
+      </Switch>
+      </BrowserRouter>
 
-             <li>{data.title}<img src={data.thumbnail} /></li>
-            
-            
-          ))
-        }
-      </ul>
     </div>
   );
 }
