@@ -4,7 +4,7 @@ import styles from './app.module.css';
 import {BrowserRouter, Route, Switch}  from 'react-router-dom';
 import Bookpage from './components/bookpage/bookpage';
 
-function App({bookData}) {
+function App({bookData, authService}) {
 
   
 
@@ -13,10 +13,10 @@ function App({bookData}) {
       <BrowserRouter>
       <Switch>
       <Route exact path="/">
-      <Login/>
+      <Login authService={authService}/>
       </Route>
       <Route path="/bookpage">
-      <Bookpage/>
+      <Bookpage authService={authService} />
       </Route>
       </Switch>
       </BrowserRouter>

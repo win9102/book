@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.header{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+}
+.title{
+    font-family: 'Dancing Script', cursive;
+    padding-left: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.title:hover{
+    transform: scale(1.05);
+}
+
+.logoutbtn{
+    border: none;
+    margin-left: auto;
+    outline: none;
+    background-color: transparent;
+    padding-right: 3rem;
+    cursor: pointer;
+   transition: all 0.2s ease-in;
+}
+.logoutbtn:hover{
+    transform: scale(1.05);
+   
+}
