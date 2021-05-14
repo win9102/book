@@ -11,11 +11,11 @@ class BookData{
         })
     }
 
-    searchBook(){
+    searchBook(query){
         return this.bookdata.get('book',{
             params:{
                 target : 'title',
-                query : '모모'
+                query : query
             }
         }).then(response => response.data)
    }

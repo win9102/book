@@ -1,0 +1,38 @@
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contents{
+    background-color: white;
+    z-index: 10;
+    height: 30rem;
+    position: absolute;
+    top: 19.2rem;
+    width: 30rem;
+    overflow-y: scroll;
+    list-style: none;
+    padding-left: 0;
+}
+.bookimg{
+    width: 20%;
+    margin-right: 2rem;
+}
+.booklist{
+    display: flex;
+    height: 8.3rem;
+    border-bottom: 1px solid #dbdbdb;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.booklist:hover{
+    background-color: whitesmoke;
+}
+.authors{
+    font-size: 1.2rem;
+    color: gray;
+}

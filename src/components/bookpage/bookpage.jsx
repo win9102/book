@@ -4,7 +4,7 @@ import Header from '../header/header';
 import { useHistory } from 'react-router';
 import Book from '../book/book';
 import BookAdd from '../bookAdd/bookAdd';
-const Bookpage = ({authService}) => {
+const Bookpage = ({authService, bookData}) => {
 
     const history = useHistory();
     const [modal, setmodal] = useState(false);
@@ -58,7 +58,7 @@ const Bookpage = ({authService}) => {
         </div>
         </section>
         {
-            modal && <BookAdd setmodal={setmodal}/>
+            modal && <BookAdd setmodal={setmodal} bookData={bookData}/>
         }
         </>
     )

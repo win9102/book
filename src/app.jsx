@@ -16,7 +16,7 @@ function App({bookData, authService}) {
       <Login authService={authService}/>
       </Route>
       <Route path="/bookpage">
-      <Bookpage authService={authService} />
+      <Bookpage authService={authService} bookData={bookData} />
       </Route>
       </Switch>
       </BrowserRouter>
