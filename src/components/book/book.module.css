@@ -1,0 +1,43 @@
+.contents{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+.contents:hover{
+    transform: translateY(-0.5rem);
+}
+.book{
+    position: relative;
+    border: 1px solid #dbdbdb;
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+.img{
+    height: 100%;
+    width: 23%;
+}
+.introduce{
+    height: 100%;
+    width: 80%;
+    margin-left: 1rem;
+   white-space: normal;
+   display: -webkit-box;
+   -webkit-line-clamp: 6;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+.span{
+    font-size: 1.2rem;
+}
+.mark{
+    position: absolute;
+    top: -0.6rem;
+    left: 0;
+    width: 2rem;
+    font-size: 2rem;
+}

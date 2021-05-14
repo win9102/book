@@ -1,0 +1,91 @@
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+}
+.form{
+   position: absolute;
+    background-color: white;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10rem;
+    padding: 1rem;
+}
+.h2{
+    font-size: 2rem;
+}
+.search{
+    width: 40.8rem;
+    height: 3.1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    outline: none;
+}
+.input{
+    width: 40rem;
+    height: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+    outline: none;
+}
+.sbox{
+    position: relative;
+}
+.searchbtn{
+    position: absolute;
+    height: 3.1rem;
+    top: 0;
+    right: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: gray;
+}
+.searchbtn:hover{
+    color: black;
+}
+.contents{
+    resize: none;
+    height: 40rem;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.closebtn{
+    position: absolute;
+    right: -2.5rem;
+    top: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.007);
+}
+.addbtn{
+    margin-top: 1rem;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border:1px solid black;
+    transition: all 0.3s ease-in;
+}
+.addbtn:hover{
+    background-color: black;
+    color: white;
+}
