@@ -2,13 +2,16 @@ import React, { useRef, useState } from 'react';
 import styles from './bookAdd.module.css';
 import Bookdata from '../bookdata/bookdata';
 
-const BookAdd = ({setmodal, bookData}) => {
+const BookAdd = ({setmodal, bookData, datasubmit}) => {
 
     const inputRef = useRef();
+    const bookTitle = useRef();
+    const bookContents = useRef();
     const bookTitleRef= useRef(null);
     const [bookSearechModal,setBookSearchModal] = useState(false);
     const [bookObject, setBookObject] = useState({});
     const [booksearch, setbooksearch] = useState([]);
+   
 
     const handleSearch = () =>{
         if(bookTitleRef.current.value == ''){
@@ -22,6 +25,7 @@ const BookAdd = ({setmodal, bookData}) => {
             
         })
         bookTitleRef.current.value = "";
+       
     }
 
     const onClick = (e) =>{
@@ -34,13 +38,34 @@ const BookAdd = ({setmodal, bookData}) => {
         handleSearch();
         }
     }
+    const onchange = (e) =>{
+        setBookObject(bookdata =>{
+            const newchangebookdata = {...bookdata, title : e.target.value }
+            return newchangebookdata;
+        })
+    }
+    
+    const submit = () =>{
+        const book = {
+            id : Date.now(),
+            title : bookTitle.current.value || 'no title...',
+            contents : bookContents.current.value || 'no contents...',
+            img : bookObject.thumbnail || './images/noimage.png'
 
+        }
+        inputRef.current.reset();
+        setBookObject({});
+        datasubmit(book);
+        setmodal(false);
+    }
 
 
     return(
         <>
         <section className={styles.modal}>
-            <form className={styles.form}>
+            <form
+            ref={inputRef} 
+            className={styles.form}>
             <h2 className={styles.h2}>Book Add</h2>
             <div className={styles.sbox}>
             <input 
@@ -59,17 +84,27 @@ const BookAdd = ({setmodal, bookData}) => {
             }
 
             <button className={styles.searchbtn} onClick={onClick}>
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
                 </button>
 
             </div>
             <input 
             type="text" 
-            placeholder={bookObject.title ||"책 선택 후 제목 입력해주세요"} 
+            placeholder={"책 선택 후 제목 입력해주세요"} 
             className={styles.input}
+            ref={bookTitle}
+            value={bookObject.title}
+            onChange={onchange}
             />
-            <textarea placeholder="독서후기를 적어주세요.." className={styles.contents}></textarea>
-            <button type="button" className={styles.addbtn}>ADD</button>
+            <textarea
+            ref={bookContents}
+             placeholder="독서후기를 적어주세요.."
+              className={styles.contents}></textarea>
+            <button 
+            onClick={submit}
+            type="button" 
+            className={styles.addbtn}
+            >ADD</button>
             <button 
             type="button" 
             className={styles.closebtn}

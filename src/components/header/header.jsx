@@ -11,7 +11,7 @@ const Header = ({logout}) => {
             onClick={logout}
             className={styles.logoutbtn}
             >
-                <i class="fas fa-sign-out-alt"></i> Logout</button>
+                <i className="fas fa-sign-out-alt"></i> Logout</button>
         </header>
     )
 };

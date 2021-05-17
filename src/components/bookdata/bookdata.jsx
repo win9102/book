@@ -7,7 +7,8 @@ const Bookdata = ({booksearch,setBookSearchModal,setBookObject}) => {
         setBookSearchModal(false);
         setBookObject({
             title,
-            thumbnail
+            thumbnail,
+            
         })
     }
 
@@ -21,6 +22,7 @@ const Bookdata = ({booksearch,setBookSearchModal,setBookObject}) => {
                     {
                          booksearch.map((data)=>(
                             <li 
+                            key={data.isbn}
                             onClick={()=>{bookDataHandle(data.title, data.thumbnail)}}
                             className={styles.booklist}
                             >

@@ -4,35 +4,51 @@ import Header from '../header/header';
 import { useHistory } from 'react-router';
 import Book from '../book/book';
 import BookAdd from '../bookAdd/bookAdd';
-const Bookpage = ({authService, bookData}) => {
+const Bookpage = ({authService, bookData,bookRepository}) => {
 
     const history = useHistory();
+    const historyState = history?.location?.state;
     const [modal, setmodal] = useState(false);
+    const [userId, setUserId] = useState(historyState && historyState.id);
+    const [bookIntroduce, setBookIntroduce] = useState({
 
-    const [bookIntroduce, setBookIntroduce] = useState([
-        {
-            id:1,
-            title:"모모",
-            img:"https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F616146%3Ftimestamp%3D20210513155738",
-            contents: 
-           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis repellendus, quasi reiciendis quaerat dolore magni recusandae dicta placeat aut sed maxime? Esse, atque alias! Quos eos possimus quaerat sunt provident?"
-                       
-        }
-        
-    ]);
+    });
 
     const logout = () =>{
         authService.logout();
     }
+    useEffect(()=>{
+        if(!userId){
+            return;
+        }
+        const stopSync = bookRepository.syncBooks(userId, books =>{
+            
+            setBookIntroduce(books)
+        })
+
+        return () =>  stopSync();
+
+    },[userId]);
 
     useEffect(()=>{
         authService
         .onAuthChange(user =>{
-            if(!user){
+            if(user){
+                setUserId(user.uid);
+            }else{
                 history.push('/');
             }
         })
     })
+
+    const datasubmit = (book) =>{
+        setBookIntroduce(data =>{
+            const updated = {...data};
+            updated[book.id] = book;
+            return updated;
+        });
+        bookRepository.saveBook(userId, book);
+    }
 
     return(
         <>
@@ -40,8 +56,8 @@ const Bookpage = ({authService, bookData}) => {
         <Header logout={logout}/>
         <div className={styles.wrap}>
         {
-            bookIntroduce.map((item)=>(
-                <Book key={item.id} item={item}/>
+           Object.keys(bookIntroduce).map((key)=>(
+                <Book key={key} item={bookIntroduce[key]}/>
             ))
         }
     
@@ -58,7 +74,7 @@ const Bookpage = ({authService, bookData}) => {
         </div>
         </section>
         {
-            modal && <BookAdd setmodal={setmodal} bookData={bookData}/>
+            modal && <BookAdd setmodal={setmodal} bookData={bookData} datasubmit={datasubmit}/>
         }
         </>
     )
