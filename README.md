@@ -18,8 +18,4 @@
 ###### 추가될 기능:
 - 수정, 삭제기능 추가예정
 
-<img src="https://user-images.githubusercontent.com/62057755/118474838-7a287e80-b746-11eb-801e-dc6deeda65df.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475285-076bd300-b747-11eb-9ee1-619803fee619.png" width="450" height="380">
-<img src="https://user-images.githubusercontent.com/62057755/118475330-13579500-b747-11eb-8fb0-d2bfd5d79f1b.png" width="450" height="380">
-<img src="https://user-images.githubusercontent.com/62057755/118475332-15b9ef00-b747-11eb-82d5-2eba8c83abc3.png" width="450" height="380">
-<img src="https://user-images.githubusercontent.com/62057755/118475337-1783b280-b747-11eb-839c-f016a968d8c5.png" width="450" height="380">
-<img src="https://user-images.githubusercontent.com/62057755/118475348-1d799380-b747-11eb-8e31-a37ca01565ee.png" width="450" height="380">
+<img src="https://user-images.githubusercontent.com/62057755/118474838-7a287e80-b746-11eb-801e-dc6deeda65df.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475285-076bd300-b747-11eb-9ee1-619803fee619.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475330-13579500-b747-11eb-8fb0-d2bfd5d79f1b.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475332-15b9ef00-b747-11eb-82d5-2eba8c83abc3.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475337-1783b280-b747-11eb-839c-f016a968d8c5.png" width="450" height="380"><img src="https://user-images.githubusercontent.com/62057755/118475348-1d799380-b747-11eb-8e31-a37ca01565ee.png" width="450" height="380">
