@@ -94,3 +94,34 @@
     display: block;
     margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+    .form{
+        margin-top: 3rem;
+        width: 30rem;
+    }
+    .search{
+        width: 100%;
+        
+    }
+    .input{
+        width: 100%;
+        
+    }
+    .thumbnail{
+        width: 10rem;
+    }
+}
+
+@media (max-width: 468px) {
+    .form{
+        position: static;
+        margin-top: 0;
+        width: 100vw;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .contents{
+        font-size: 1.2rem;
+    }
+}

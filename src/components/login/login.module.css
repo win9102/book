@@ -43,3 +43,16 @@
     background-color: black;
     color: white;
 }
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+     .login{
+         margin-left: 0;
+         min-width: 28rem;
+     }
+     .book{
+        min-width: 35rem;
+     }
+  }

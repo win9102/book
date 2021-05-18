@@ -41,3 +41,12 @@
     width: 2rem;
     font-size: 2rem;
 }
+
+@media (max-width: 768px) {
+    .contents{
+       
+        width: 100%;
+       
+    }
+    
+}
