@@ -15,7 +15,7 @@
 ###### -:
 - 구글 로그인(firebaseauth 이용) 가능, 로그아웃 가능
 - 카카오 책 검색 open api 사용 (제목 검색, 최대갯수 10개)
-- firebase realtime database 사용 (제목, 내용, 이미지 저장)
+- firebase realtime database 사용 (제목, 내용, 이미지 저장, 저장된 리스트 클릭시 수정과 삭제기능)
 
 ###### 추가될 기능:
 - 로딩 화면
