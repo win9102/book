@@ -50,7 +50,7 @@ const BookAdd = ({setmodal, bookData, datasubmit}) => {
             id : Date.now(),
             title : bookTitle.current.value || 'no title...',
             contents : bookContents.current.value || 'no contents...',
-            img : bookObject.thumbnail || './images/noimage.png'
+            thumbnail : bookObject.thumbnail || './images/noimage.png'
 
         }
         inputRef.current.reset();
@@ -112,6 +112,7 @@ const BookAdd = ({setmodal, bookData, datasubmit}) => {
                 setmodal(false)
             }}
             >x</button>
+           
             </form>
         </section>
         {

@@ -4,15 +4,17 @@ import Header from '../header/header';
 import { useHistory } from 'react-router';
 import Book from '../book/book';
 import BookAdd from '../bookAdd/bookAdd';
+import Bookmodify from '../bookmodify/bookmodify';
 const Bookpage = ({authService, bookData,bookRepository}) => {
 
     const history = useHistory();
     const historyState = history?.location?.state;
     const [modal, setmodal] = useState(false);
+    const [modifyModal, setModifyModal] = useState(false);
     const [userId, setUserId] = useState(historyState && historyState.id);
     const [bookIntroduce, setBookIntroduce] = useState({
-
     });
+    const [bookid1,setbookid1]= useState({});
 
     const logout = () =>{
         authService.logout();
@@ -50,6 +52,18 @@ const Bookpage = ({authService, bookData,bookRepository}) => {
         bookRepository.saveBook(userId, book);
     }
 
+    const deletebook = book =>{
+        setBookIntroduce(data =>{
+            const updated = {...data};
+            delete updated[book.id]
+            return updated;
+        });
+        bookRepository.removeBook(userId, book);
+    }
+    const bookid = (book) =>{
+        setbookid1(bookIntroduce[book])
+    }
+
     return(
         <>
         <section className={styles.bookpage}>
@@ -57,7 +71,7 @@ const Bookpage = ({authService, bookData,bookRepository}) => {
         <div className={styles.wrap}>
         {
            Object.keys(bookIntroduce).map((key)=>(
-                <Book key={key} item={bookIntroduce[key]}/>
+                <Book key={key} item={bookIntroduce[key]} bookid={bookid}  setModifyModal={setModifyModal}/>
             ))
         }
     
@@ -75,6 +89,14 @@ const Bookpage = ({authService, bookData,bookRepository}) => {
         </section>
         {
             modal && <BookAdd setmodal={setmodal} bookData={bookData} datasubmit={datasubmit}/>
+        }
+        {
+            modifyModal && <Bookmodify 
+            deletebook={deletebook}
+            bookid1={bookid1} 
+            setModifyModal={setModifyModal}
+            datasubmit={datasubmit}
+            />
         }
         </>
     )
